@@ -97,8 +97,9 @@ function login({ email, password, req }) {
   });
 }
 
-function logout({ user, logout }) {
-  logout();
+function logout(req) {
+  const { user } = req;
+  req.logout();
   return user;
 }
 
