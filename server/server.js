@@ -11,10 +11,12 @@ const schema = require("./schema/schema");
 // Create a new Express application
 const app = express();
 
+//mongoLab Credentials
+const user = process.env.USER;
+const password = process.env.PASSWORD;
+
 // Replace with your mongoLab URI
-const MONGO_URI = `mongodb://${process.env.USER}:${
-  process.env.PASSWORD
-}@ds161144.mlab.com:61144/auth`;
+const MONGO_URI = `mongodb://${user}:${password}@ds161144.mlab.com:61144/auth`;
 
 // Mongoose's built in promise library is deprecated, replace it with ES2015 Promise
 mongoose.Promise = global.Promise;
