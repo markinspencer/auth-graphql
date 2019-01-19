@@ -97,4 +97,9 @@ function login({ email, password, req }) {
   });
 }
 
-module.exports = { signup, login };
+function logout({ user, logout }) {
+  logout();
+  return user;
+}
+
+module.exports = { signup, login, logout };
