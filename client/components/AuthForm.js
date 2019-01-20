@@ -19,9 +19,15 @@ class AuthForm extends Component {
 
   render() {
     const { email, password } = this.state;
+    const { errors } = this.props;
     return (
       <div className="row">
         <form onSubmit={this.onSubmit.bind(this)} className="col s4">
+          <div className="errors">
+            {errors.map(error => (
+              <div key={error}>{error}</div>
+            ))}
+          </div>
           <div className="input-field">
             <input
               type="text"
